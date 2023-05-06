@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script>
+        tailwind.config= {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#f5f6f8', // white smoke
+                        'secondary': '#222831', // dark slate gray
+                        'tertiary': '#30475E', // dark blue gray
+                        'quaternary': '#F05454', // red
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <style type="text/tailwindcss">     
+        /* * {
+            border: solid 1px red;
+        } */
+
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            font-family: 'Poppins';
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 25px;
+            padding-left: 200px;
+            padding-right: 200px;
+            margin-bottom: 10px;
+        }
+
+        .hr-line {
+            width: 50%;
+            margin: 50px;
+        }
+
+        .item-1 h1 {
+            font-weight: bold;
+        }
+
+        .nav-page {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-page ul {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex: 2;
+        }
+
+        .nav-page ul li {
+            list-style: none;
+            margin: 0 10px;
+        }
+
+        .nav-but button {
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .welcome-page {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+            background-image: url(https://img.freepik.com/free-vector/white-abstract-background_23-2148810112.jpg?w=1060&t=st=1683358668~exp=1683359268~hmac=124169ca34ad131c6f5b13dbb61ed15add349320df3b4dd8bd624b22dc1a1e24);
+            background-size: cover;
+        }
+
+        #important {
+            transition: all 0.3s ease-in-out;
+        }
+
+        #important:hover {
+            font-size: 55px;
+        }
+
+        .welcome-page img {
+            width: 200px;
+            height: auto;
+            border-radius: 50%;
+            margin: 0 auto;
+            margin-top: 25px;
+            border: 3px solid #F05454;
+            transition: width .5s, height .5s;
+            transition-timing-function: ease-in-out;
+        }
+
+        .welcome-page img:hover {
+            width: 220px;
+            height: auto;
+        }
+
+        #about-me {
+            display: flex;
+            flex-direction: column;
+            align-items: normal;
+            height: 100%;
+            margin: 25px;
+            margin-left: 200px;
+            margin-right: 200px;
+        }
+
+        #about-me h1 {
+            margin-top: 100px;
+        }
+
+        #about-me p {
+            margin-top: 20px;
+        }
+
+        footer {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 20vh;
+            background-color: #222831;
+            color: #f5f6f8;
+            padding: 10px;
+        }
+
+        footer ul {
+            display: flex;
+        }
+
+        footer ul li {
+            list-style: none;
+            margin: 0 30px;
+            transform: scale(1.5);
+        }
+
+        #achievement {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-top: 100px;
+            margin-left: 200px;
+            margin-right: 200px;
+            margin-bottom: 50px;
+        }
+
+        #achievement img {
+            width: auto;
+            height: 20vh;
+        }
+
+        .ach-cont{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-top: 25px;
+        }
+
+        #ksnk {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #e7e9ee;
+            padding: 30px;
+            margin: 20px;
+            border-radius: 20px;
+            transition: all 0.3s ease-in-out;
+            width: 50vh;
+        }
+
+        #ksnk:hover {
+            transform: scale(1.05);
+        }
+        #cpsc {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #e7e9ee;
+            padding: 30px;
+            margin: 20px;
+            border-radius: 20px;
+            transition: all 0.3s ease-in-out;
+            width: 50vh;
+        }
+
+        #cpsc:hover {
+            transform: scale(1.05);
+        }
+
+        #mage {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #e7e9ee;
+            padding: 30px;
+            margin: 20px;
+            border-radius: 20px;
+            transition: all 0.3s ease-in-out;
+            width: 50vh;
+        }
+
+        #mage:hover {
+            transform: scale(1.05);
+        }
+
+        #experience {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 100px;
+            margin-bottom: 50px;
+            margin-left: 200px;
+            margin-right: 200px;
+        }
+
+        #experience img {
+            width: auto;
+            height: 20vh;
+        }
+
+        .exp-cont{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-top: 25px;
+        }
+
+        #ssc {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #e7e9ee;
+            padding: 30px;
+            margin: 20px;
+            border-radius: 20px;
+            transition: all 0.3s ease-in-out;
+            width: 35vh;
+        }
+
+        #ssc:hover {
+            transform: scale(1.05);
+        }
+
+        #heterogic {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #e7e9ee;
+            padding: 30px;
+            margin: 20px;
+            border-radius: 20px;
+            transition: all 0.3s ease-in-out;
+            width: 35vh;
+        }
+
+        #heterogic:hover {
+            transform: scale(1.05);
+        }
+
+        #certificate {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #certificate ol {
+            align-self: flex-start;
+        }
+    </style>
+</head>
+
+<body class="bg-primary">
+    <header class="bg-secondary text-primary shadow-xl">
+        <div class="item-1">
+            <h1 class="text-2xl"><a href="#">BintangRamadhan;</a></h1>
+        </div>
+        <div class="nav-page">
+            <nav>
+                <ul>
+                    <li><a href="#about-me">About</a></li>
+                    <li><a href="#achievement">Achievement</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-but">
+                <a href="#contacts"><button class="bg-quaternary ml-2 hover:bg-[#f05454e7]">Contacts</button></a>
+            </div>
+        </div>
+        
+    </header>
+
+    <div class="welcome-page">
+        <div class="profile-photo">
+            <img src="https://media.licdn.com/dms/image/C5603AQGV0NbdHLrSGA/profile-displayphoto-shrink_800_800/0/1630501570627?e=2147483647&v=beta&t=AZMbIgk3kZ1MzsTPAxvAHKqDIQTFrFNOSybhmy-KjdQ" alt="personal picture" class="shadow-2xl">
+        </div>
+        <div class="">
+            <h1 class="text-5xl font-extrabold my-5 text-secondary">I'm <span id="important" class="text-quaternary">Bintang</span> Ramadhan&#128075</h1>
+            <p class="text-secondary">An Informatics Engineering student at Jakarta State Polytechnic.</p>
+            <a href="#about-me"><button id="about-but" class="bg-quaternary p-4 my-3 rounded-3xl shadow-md text-primary hover:shadow-lg hover:bg-[#f05454e7]">About Me</button></a>
+        </div>
+    </div>
+
+    <div id="about-me" class="">
+        <h1 class="text-2xl font-bold my-3 text-center">About Me</h1>
+        <div id="about-par">
+            <p>Welcome to my vibrant portfolio website! 🌟 I'm Muhammad Bintang Ramadhan, an enthusiastic Informatics Engineering student at Jakarta State Polytechnic. Prepare to embark on a thrilling journey through my world of web development and music, where passion meets purpose.</p>
+            <p>When it comes to music, I'm immersed in a symphony of joy. 🎵 From captivating vocals to skillful guitar strumming and the art of creating my own melodies, I unlock a realm of boundless creativity. Music becomes the universal language through which I express myself and forge profound connections with others.</p>
+            <p>But let's not stop at the harmonious melodies. I've also proven my mettle in exhilarating academic competitions! 🏆 Picture this: I seized the 5th spot in the cutthroat KSN-K Computer Division. Fuelled by my unwavering determination and technical prowess, I claimed my rightful place as a semifinalist in both the IPB Computer Problem Solving Competition and MAGE ITS. These experiences have solidified my standing in the dynamic field of computer science.</p>
+            <p>Beyond the thrill of competitions, I've delved into the realm of leadership and teamwork. Imagine leading the charge in the School Science Club, where I nurtured a collective passion for scientific exploration while sharpening my own leadership skills. But wait, there's more! I take immense pride in being the visionary founder and chairman of Heterogic, an organization that celebrates diversity and inclusivity. Through Heterogic, I've created an enchanting space where unique perspectives and talents are cherished and nurtured.</p>
+            <p>As a perpetual student of Informatics Engineering, I hunger for knowledge and opportunities that expand my horizons, especially in the ever-evolving domain of web development. I crave collaborations that ignite my creativity, challenge me to overcome obstacles, and propel me further into the captivating world of technology.</p>
+            <p>Prepare to be enchanted as you peruse my portfolio website. Explore the tapestry of my work, projects, and achievements. Let's embark on an exhilarating journey together! ✨ And remember, I'm always ready to embrace fresh opportunities and forge new connections. Don't hesitate to reach out if you'd like to collaborate or delve deeper into my captivating experiences.</p>
+            <p>Buckle up, because this adventure has only just begun! 🚀</p>
+        </div>
+    </div>
+
+    <div id="achievement">
+        <h1 class="text-2xl font-bold text-center">Achievements</h1>
+        <div class="ach-cont">
+            <div id="ksnk" class="shadow-lg">
+                <img src="https://upload.wikimedia.org/wikipedia/id/d/d5/Logo_OSN_baru.jpg?20170319163649" alt="KSN-K" class="shadow-lg rounded-3xl">
+                <p class="text-center mt-5"><b>5th Place</b><br>Olimpiade Sains Nasional Tingkat Kabupaten</p>
+            </div>
+            <div id="cpsc" class="shadow-lg">
+                <img src="https://media.licdn.com/dms/image/C560BAQEm68HR-3maNA/company-logo_200_200/0/1597587085837?e=2147483647&v=beta&t=HBHLJ4qpgd4a-saiZElanCof1YRcsadwi6fYPvs7P-k" alt="CPSC IPB" class="shadow-lg rounded-3xl">
+                <p class="text-center mt-5"><b>Semifinalist</b><br>Computer Problem Solving Competition - IPB</p>
+            </div>
+            <div id="mage" class="shadow-lg">
+                <img src="https://pbs.twimg.com/profile_images/919532850428309504/Ci0wJGzK_400x400.jpg" alt="MAGE ITS" class="shadow-lg rounded-3xl">
+                <p class="text-center mt-5"><b>Semifinalist</b><br>Multimedia and Game Event - Institut Teknologi Sepuluh Nopember</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="experience">
+        <h1 class="text-2xl font-bold text-center">Experiences</h1>
+        <div class="exp-cont">
+            <div id="ssc" class="shadow-lg">
+                <img src="https://i.ibb.co/svsvXGw/SSC.png" alt="SSC" class="shadow-lg rounded-3xl">
+                <p class="text-center mt-5"><b>President</b><br>SMAVO Science Club</p>
+                <p class="text-sm"><em>2021 - 2022</em></p>
+            </div>
+            <div id="heterogic" class="shadow-lg">
+                <img src="https://lh3.googleusercontent.com/rMjZEUHrHI9xEtlW6Ld9SFM3-UFITD7Qk4dTumRLWR4RY16D0sTLs_nYJOw9tYjc-5F13k3sRwk35rLW0W-0xd69munjz0XTI_7aQ5ztECyKL_P1WkCovenlhxtls0Vzma96GptkSxou281pbnMSAyu31LHpdpjXkUKHpse0J_acI-sRVNLbVW5XFIbmQPOtha313DnPJm_Md-wgwt6XTCK9qIG8nYXaWsFR1ZFhw1lNvA1mj43sZuwpFW_D5IJYPzcpIO9D5TJ69hXBEBTH0XDTnad9qVK1fm73TJy3j0kkA1ZtK-eqJ0_GCAE7atcp-ueVZpnV4uDi0c7DGmGVEKrPdaSBnUzWKb-fw-9POx38qtiapy3KNBZhjPhIcH_Yoq4lYmdrAiv7gn8oFDnCFO2iZ2y76eCawQhm0_7AJ8gm7KrXDNXPYDmVABjZF4o73-3jPXb2GNcSi6jOt6l_BaeWgtyqVUvzwc7AgfQAXUIuR8abyONavAt5lLwEsD2kziy9Kb7OAti0fcPmdolEiVn4Cx11Cmpo3DJ5hQ0ITrWN8g0FycXWK_2USrUbBk0HY8BKcgdSLx5tzlg4pFcXqsPvzH18a0AS-SAdbKJ4rDVDG_LXFCv_S9vCj91TGxPrvKxkuuM54ZAOFZuUjUq-anwcJw17FBLvIDxueLUDErl5PFpepqpriIBy0yM0tAZyIuyaUNLNnRhU0oIyU5OHM0J26waK8Goaxf8VJAG9iHbEds6njSWPa8QtnScC38Z7MPHOuhx2i9k0JArTv3OQWA3k7M_luU1SMJt0NSjl8ewWI6GcIBdY0k8RYZetwkgSe8mXUaxttFWR9bSzmYPCofKRuO67c4HsBCnCwRtbZpgcpeB4x3on-TBnM__Q-oiH1A0jN9gkkCFYppIKoFG982I37CDbZnAPQ6NjfC3SpY1YnkRQ52cYjt8VnbrCjLHXmPpZg750sT8YDCdqKN35=w933-h933-s-no?authuser=0" alt="CPSC IPB" class="shadow-lg rounded-3xl">
+                <p class="text-center mt-5"><b>Project Leader</b><br>Heterogic</p>
+                <p class="text-sm"><em>2021</em></p>
+            </div>
+        </div>
+    </div>
+
+    <footer id="contacts">
+        <h1 class="text-xl font-bold">Contacts</h1>
+        <ul class="social-icons">
+          <li><a href="https://wa.me/your-whatsapp-number"><i class="fab fa-whatsapp"></i></a></li>
+          <li><a href="mailto:your-email@example.com"><i class="far fa-envelope"></i></a></li>
+          <li><a href="https://www.instagram.com/your-instagram"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="https://twitter.com/your-twitter"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="https://www.linkedin.com/in/your-linkedin"><i class="fab fa-linkedin"></i></a></li>
+        </ul>
+        <p class="text-xs mb-2">&copy; 2023 Bintang Ramadhan</p>
+    </footer>
+</body>
+</html>
